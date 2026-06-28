@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Captains Parekkad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,10 +10,9 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#f5d78e;--ice:#8cecff;--pink:#ff4fa3;--panel:rgba(255,255,255,.08);--border:rgba(255,255,255,.2);--shadow:0 12px 30px rgba(0,0,0,.35)}
-html,body{width:100%;height:100%;overflow:hidden}
-body{font-family:Poppins,sans-serif;background:url('vikings.jpg') center/cover fixed;min-height:100vh;color:#fff;padding:40px 20px;overscroll-behavior:none;touch-action:manipulation}
+body{font-family:Poppins,sans-serif;background:url('vikings.jpg') center/cover fixed;min-height:100vh;color:#fff;padding:40px 20px}
 body:before{content:'';position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:-1}
-.container{max-width:1200px;width:min(1200px,100%);margin:auto;text-align:center}
+.container{max-width:1200px;margin:auto;text-align:center}
 h1{font-family:Cinzel,serif;font-size:clamp(2.6rem,6vw,4.1rem);text-shadow:0 0 20px rgba(0,255,255,.55);margin-bottom:6px}
 .title-wrap{display:inline-flex;align-items:center;justify-content:center;gap:.35em;flex-wrap:wrap}
 .title-icon{display:inline-block;animation:iconPop .8s ease both}
@@ -22,9 +21,9 @@ h1{font-family:Cinzel,serif;font-size:clamp(2.6rem,6vw,4.1rem);text-shadow:0 0 2
 .animated-title .space{width:.38em}
 .subtitle{font-size:clamp(1rem,2vw,1.4rem);margin:10px 0 26px;color:var(--gold)}
 h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;color:var(--ice)}
-.member-grid{display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:20px;justify-content:center;align-items:stretch}
-.member-card{width:100%;padding:18px;border-radius:18px;background:var(--panel);border:2px solid var(--border);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:var(--shadow)}
-.member-card:hover,.member-card:focus-visible{transform:translateY(-8px) scale(1.03);box-shadow:0 0 20px rgba(0,255,255,.4);border-color:rgba(140,236,255,.75)}
+.member-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.member-card{width:220px;padding:18px;border-radius:18px;background:var(--panel);border:2px solid var(--border);cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:var(--shadow)}
+.member-card:hover,.member-card:focus-visible{transform:translateY(-8px) scale(1.05);box-shadow:0 0 20px rgba(0,255,255,.4);border-color:rgba(140,236,255,.75)}
 .member-name{font-size:1.12rem;font-weight:700;letter-spacing:.02em}
 .role{margin-top:10px;font-weight:700;color:var(--gold);min-height:26px}
 .tap-note{margin-top:10px;font-size:.8rem;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.05em}
@@ -48,8 +47,7 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
 .close:hover{transform:scale(1.15);color:#fff}
 @keyframes letterReveal{from{opacity:0;transform:translateY(22px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes iconPop{from{opacity:0;transform:scale(.5) rotate(-20deg)}to{opacity:1;transform:scale(1) rotate(0)}}
-@media (max-width:900px){.member-grid{grid-template-columns:repeat(2, minmax(0, 1fr))}}
-@media (max-width:600px){body{padding:24px 14px}.member-grid{grid-template-columns:repeat(2, minmax(0, 1fr));gap:14px}.modal-content{padding:24px 18px}.modal-content img{width:150px;height:150px}}
+@media (max-width:600px){body{padding:24px 14px}.member-card{width:min(100%,300px)}.modal-content{padding:24px 18px}.modal-content img{width:150px;height:150px}}
 </style>
 </head>
 <body>
@@ -103,14 +101,9 @@ function openProfileFromCard(card){
   document.getElementById('profileInstagram').textContent='@'+instagram;
   document.getElementById('profilePhoneLink').href='tel:'+cleanPhone(phone);
   const instaLink=document.getElementById('profileInstagramLink');
-  instaLink.onclick=function(e){e.preventDefault();window.location.href='https://www.instagram.com/'+encodeURIComponent(instagram)+'/';};
-  profileImg.style.display='block';
-  profileImg.src=img;
-  profileImg.alt=name+' photo';
-  modal.classList.remove('closing');
-  modal.style.display='flex';
-  requestAnimationFrame(()=>modal.classList.add('show'));
-  modal.setAttribute('aria-hidden','false');
+  instaLink.onclick=function(e){e.preventDefault();const webUrl='https://www.instagram.com/'+encodeURIComponent(instagram)+'/';window.location.href=webUrl;};
+  profileImg.style.display='block'; profileImg.src=img; profileImg.alt=name+' photo';
+  modal.classList.remove('closing'); modal.style.display='flex'; requestAnimationFrame(()=>modal.classList.add('show')); modal.setAttribute('aria-hidden','false');
 }
 function closeModal(){modal.classList.remove('show');modal.classList.add('closing');modal.setAttribute('aria-hidden','true');setTimeout(()=>{modal.classList.remove('closing');modal.style.display='';},420);}
 function handleKey(event){if(event.key==='Enter' || event.key===' '){event.preventDefault();openProfileFromCard(event.currentTarget);}}
