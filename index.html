@@ -43,7 +43,7 @@ border-radius:18px;
 background:var(--panel);
 border:2px solid var(--border);
 cursor:pointer;
-transition:.3s;
+transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
 backdrop-filter:blur(6px);
 -webkit-backdrop-filter:blur(6px);
 box-shadow:var(--shadow)
@@ -59,7 +59,27 @@ border-color:rgba(140,236,255,.75)
 .member-card:nth-child(odd){background:linear-gradient(135deg,rgba(0,198,255,.24),rgba(0,114,255,.18))}
 .member-card:nth-child(even){background:linear-gradient(135deg,rgba(255,81,47,.24),rgba(221,36,118,.18))}
 .member{background:linear-gradient(135deg,rgba(7,52,76,.52),rgba(28,106,116,.28))}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.86);justify-content:center;align-items:center;padding:20px;z-index:50}
+
+.modal{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+background:rgba(0,0,0,.2);
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+transition:opacity .35s ease,background .35s ease,visibility .35s ease;
+z-index:50
+}
+.modal.show{
+opacity:1;
+visibility:visible;
+pointer-events:auto;
+background:rgba(0,0,0,.86)
+}
 .modal-content{
 background:linear-gradient(135deg,rgba(23,31,49,.94),rgba(9,76,83,.72));
 padding:28px 24px;
@@ -69,7 +89,18 @@ max-width:390px;
 width:100%;
 position:relative;
 box-shadow:0 0 36px rgba(0,0,0,.45),0 0 22px rgba(140,236,255,.16);
-text-align:center
+text-align:center;
+transform:translateY(35px) scale(.82) rotateX(18deg);
+opacity:0;
+transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .42s ease
+}
+.modal.show .modal-content{
+transform:translateY(0) scale(1) rotateX(0deg);
+opacity:1
+}
+.modal.closing .modal-content{
+transform:translateY(24px) scale(.9);
+opacity:0
 }
 .modal-content img{
 width:170px;
@@ -78,14 +109,22 @@ border-radius:50%;
 object-fit:cover;
 border:5px solid rgba(140,236,255,.95);
 margin:4px auto 20px;
-background:rgba(255,255,255,.12)
+background:rgba(255,255,255,.12);
+box-shadow:0 0 24px rgba(140,236,255,.3)
 }
 .modal-content h2{font-size:2rem;margin-bottom:8px}
 .modal-content h3{font-size:1.15rem;color:var(--gold);margin-bottom:16px}
 .modal-content .profile-phone{font-size:1.05rem;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px}
 .phone-icon{font-size:1.45rem;color:var(--pink)}
-.close{position:absolute;right:16px;top:10px;font-size:32px;cursor:pointer;color:var(--ice)}
-@media (max-width:600px){body{padding:24px 14px}.member,.member-card{width:min(100%,300px)}.modal-content{padding:24px 18px}.modal-content img{width:150px;height:150px}}
+.close{position:absolute;right:16px;top:10px;font-size:32px;cursor:pointer;color:var(--ice);transition:transform .2s ease,color .2s ease}
+.close:hover{transform:scale(1.15);color:#fff}
+
+@media (max-width:600px){
+body{padding:24px 14px}
+.member,.member-card{width:min(100%,300px)}
+.modal-content{padding:24px 18px}
+.modal-content img{width:150px;height:150px}
+}
 </style>
 </head>
 <body>
@@ -95,10 +134,10 @@ background:rgba(255,255,255,.12)
 
 <h2>Leadership</h2>
 <div class="members">
-<div class="member" tabindex="0" onclick="openProfile('Hareesh','Secretary','hareesh.jpg','+91 7994353702')" onkeypress="handleKey(event,'Hareesh','Secretary','hareesh.jpg','+91 XXXXX XXXXX')"><div class="member-name">Hareesh</div><div class="role">Secretary</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Manesh','Property Owner','manesh.jpg','+91 7356361778')" onkeypress="handleKey(event,'Manesh','Property Owner','manesh.jpg','+91 XXXXX XXXXX')"><div class="member-name">Manesh</div><div class="role">Property Owner</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Shiyadh','President','shiyadh.jpg','+91 9961594667')" onkeypress="handleKey(event,'Shiyadh','President','shiyadh.jpg','+91 XXXXX XXXXX')"><div class="member-name">Shiyadh</div><div class="role">President</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530')" onkeypress="handleKey(event,'Ajeesh','Treasurer','ajeesh.jpg','+91 XXXXX XXXXX')"><div class="member-name">Ajeesh</div><div class="role">Treasurer</div><div class="tap-note">Click to view</div></div>
+<div class="member" tabindex="0" onclick="openProfile('Hareesh','Secretary','hareesh.jpg','+91 7994353702')" onkeypress="handleKey(event,'Hareesh','Secretary','hareesh.jpg','+91 7994353702')"><div class="member-name">Hareesh</div><div class="role">Secretary</div><div class="tap-note">Click to view</div></div>
+<div class="member" tabindex="0" onclick="openProfile('Manesh','Property Owner','manesh.jpg','+91 7356361778')" onkeypress="handleKey(event,'Manesh','Property Owner','manesh.jpg','+91 7356361778')"><div class="member-name">Manesh</div><div class="role">Property Owner</div><div class="tap-note">Click to view</div></div>
+<div class="member" tabindex="0" onclick="openProfile('Shiyadh','President','shiyadh.jpg','+91 9961594667')" onkeypress="handleKey(event,'Shiyadh','President','shiyadh.jpg','+91 9961594667')"><div class="member-name">Shiyadh</div><div class="role">President</div><div class="tap-note">Click to view</div></div>
+<div class="member" tabindex="0" onclick="openProfile('Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530')" onkeypress="handleKey(event,'Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530')"><div class="member-name">Ajeesh</div><div class="role">Treasurer</div><div class="tap-note">Click to view</div></div>
 </div>
 
 <h2>Members</h2>
@@ -129,29 +168,48 @@ background:rgba(255,255,255,.12)
 </div>
 
 <script>
-function openProfile(name,role,img,phone){
+const modal=document.getElementById('profileModal');
 const profileImg=document.getElementById('profileImg');
+
+function openProfile(name,role,img,phone){
 document.getElementById('profileName').textContent=name;
 document.getElementById('profileRole').textContent=role;
 document.getElementById('profilePhone').textContent=phone;
 profileImg.style.display='block';
 profileImg.src=img;
 profileImg.alt=name + ' photo';
-document.getElementById('profileModal').style.display='flex';
-document.getElementById('profileModal').setAttribute('aria-hidden','false');
+modal.classList.remove('closing');
+modal.style.display='flex';
+requestAnimationFrame(()=>{
+modal.classList.add('show');
+});
+modal.setAttribute('aria-hidden','false');
 }
+
 function closeModal(){
-document.getElementById('profileModal').style.display='none';
-document.getElementById('profileModal').setAttribute('aria-hidden','true');
+modal.classList.remove('show');
+modal.classList.add('closing');
+modal.setAttribute('aria-hidden','true');
+setTimeout(()=>{
+modal.classList.remove('closing');
+modal.style.display='';
+},420);
 }
+
 function handleKey(event,name,role,img,phone){
 if(event.key==='Enter' || event.key===' '){
 event.preventDefault();
 openProfile(name,role,img,phone);
 }
 }
-window.onclick=function(e){if(e.target.id==='profileModal')closeModal();}
-window.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+window.onclick=function(e){
+if(e.target===modal) closeModal();
+}
+
+window.addEventListener('keydown',function(e){
+if(e.key==='Escape' && modal.classList.contains('show')) closeModal();
+});
 </script>
 </body>
 </html>
