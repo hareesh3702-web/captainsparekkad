@@ -9,28 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---gold:#f5d78e;
---ice:#8cecff;
---pink:#ff4fa3;
---panel:rgba(255,255,255,.08);
---border:rgba(255,255,255,.2);
---shadow:0 12px 30px rgba(0,0,0,.35);
-}
-body{
-font-family:Poppins,sans-serif;
-background:url('vikings.jpg') center/cover fixed;
-min-height:100vh;
-color:#fff;
-padding:40px 20px;
-}
-body:before{
-content:'';
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.72);
-z-index:-1
-}
+:root{--gold:#f5d78e;--ice:#8cecff;--pink:#ff4fa3;--panel:rgba(255,255,255,.08);--border:rgba(255,255,255,.2);--shadow:0 12px 30px rgba(0,0,0,.35)}
+body{font-family:Poppins,sans-serif;background:url('vikings.jpg') center/cover fixed;min-height:100vh;color:#fff;padding:40px 20px}
+body:before{content:'';position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:-1}
 .container{max-width:1200px;margin:auto;text-align:center}
 h1{font-family:Cinzel,serif;font-size:clamp(2.6rem,6vw,4.1rem);text-shadow:0 0 20px rgba(0,255,255,.55);margin-bottom:6px}
 .title-wrap{display:inline-flex;align-items:center;justify-content:center;gap:.35em;flex-wrap:wrap}
@@ -72,25 +53,14 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
 </head>
 <body>
 <div class="container">
-<h1>
-<span class="title-wrap">
-<span class="title-icon">⚽</span>
-<span id="animatedTitle" class="animated-title" aria-label="Captains Parekkad"></span>
-<span class="title-icon">⚽</span>
-</span>
-</h1>
+<h1><span class="title-wrap"><span class="title-icon">⚽</span><span id="animatedTitle" class="animated-title" aria-label="Captains Parekkad"></span><span class="title-icon">⚽</span></span></h1>
 <div class="subtitle">Established on 2019</div>
-
-<h2>Leadership</h2>
-<div class="members">
-<div class="member" tabindex="0" onclick="openProfile('Hareesh','Secretary','hareesh.jpg','+91 7994353702','hareeshkyd')" onkeypress="handleKey(event,'Hareesh','Secretary','hareesh.jpg','+91 7994353702','hareeshkyd')"><div class="member-name">Hareesh</div><div class="role">Secretary</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Manesh','Property Owner','manesh.jpg','+91 7356361778','_manesh____')" onkeypress="handleKey(event,'Manesh','Property Owner','manesh.jpg','+91 7356361778','_manesh____')"><div class="member-name">Manesh</div><div class="role">Property Owner</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Shiyadh','President','shiyadh.jpg','+91 9961594667','shiyadh_parekkad')" onkeypress="handleKey(event,'Shiyadh','President','shiyadh.jpg','+91 9961594667','shiyadh_parekkad')"><div class="member-name">Shiyadh</div><div class="role">President</div><div class="tap-note">Click to view</div></div>
-<div class="member" tabindex="0" onclick="openProfile('Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530','ajeesh_parekkad')" onkeypress="handleKey(event,'Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530','ajeesh_parekkad')"><div class="member-name">Ajeesh</div><div class="role">Treasurer</div><div class="tap-note">Click to view</div></div>
-</div>
-
 <h2>Members</h2>
 <div class="member-grid">
+<div class="member-card" tabindex="0" onclick="openProfile('Hareesh','Secretary','hareesh.jpg','+91 7994353702','hareeshkyd')" onkeypress="handleKey(event,'Hareesh','Secretary','hareesh.jpg','+91 7994353702','hareeshkyd')"><div class="member-name">Hareesh</div><div class="role">Secretary</div><div class="tap-note">Click to view profile</div></div>
+<div class="member-card" tabindex="0" onclick="openProfile('Manesh','Property Owner','manesh.jpg','+91 7356361778','_manesh____')" onkeypress="handleKey(event,'Manesh','Property Owner','manesh.jpg','+91 7356361778','_manesh____')"><div class="member-name">Manesh</div><div class="role">Property Owner</div><div class="tap-note">Click to view profile</div></div>
+<div class="member-card" tabindex="0" onclick="openProfile('Shiyadh','President','shiyadh.jpg','+91 9961594667','shiyadh_parekkad')" onkeypress="handleKey(event,'Shiyadh','President','shiyadh.jpg','+91 9961594667','shiyadh_parekkad')"><div class="member-name">Shiyadh</div><div class="role">President</div><div class="tap-note">Click to view profile</div></div>
+<div class="member-card" tabindex="0" onclick="openProfile('Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530','ajeesh_parekkad')" onkeypress="handleKey(event,'Ajeesh','Treasurer','ajeesh.jpg','+91 8111947530','ajeesh_parekkad')"><div class="member-name">Ajeesh</div><div class="role">Treasurer</div><div class="tap-note">Click to view profile</div></div>
 <div class="member-card" tabindex="0" onclick="openProfile('Ajith','Member','ajith.jpg','+91 XXXXX XXXXX','ajith_parekkad')" onkeypress="handleKey(event,'Ajith','Member','ajith.jpg','+91 XXXXX XXXXX','ajith_parekkad')"><div class="member-name">Ajith</div><div class="tap-note">Click to view profile</div></div>
 <div class="member-card" tabindex="0" onclick="openProfile('Rashi','Member','rashi.jpg','+91 XXXXX XXXXX','rashi_parekkad')" onkeypress="handleKey(event,'Rashi','Member','rashi.jpg','+91 XXXXX XXXXX','rashi_parekkad')"><div class="member-name">Rashi</div><div class="tap-note">Click to view profile</div></div>
 <div class="member-card" tabindex="0" onclick="openProfile('Subi','Member','subi.jpg','+91 XXXXX XXXXX','subi_parekkad')" onkeypress="handleKey(event,'Subi','Member','subi.jpg','+91 XXXXX XXXXX','subi_parekkad')"><div class="member-name">Subi</div><div class="tap-note">Click to view profile</div></div>
@@ -105,73 +75,31 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
 <div class="member-card" tabindex="0" onclick="openProfile('Sudev','Member','sudev.jpg','+91 XXXXX XXXXX','sudev_parekkad')" onkeypress="handleKey(event,'Sudev','Member','sudev.jpg','+91 XXXXX XXXXX','sudev_parekkad')"><div class="member-name">Sudev</div><div class="tap-note">Click to view profile</div></div>
 </div>
 </div>
-
 <div id="profileModal" class="modal" aria-hidden="true">
-<div class="modal-content">
-<span class="close" onclick="closeModal()">&times;</span>
-<img id="profileImg" src="hareesh.jpg" alt="Profile photo" onerror="this.style.display='none'">
-<h2 id="profileName">Hareesh</h2>
-<h3 id="profileRole">Secretary</h3>
-<div class="profile-links">
-<a id="profilePhoneLink" class="profile-link" href="tel:+917994353702"><span class="link-icon phone-icon">📞</span><span id="profilePhone">+91 7994353702</span></a>
-<a id="profileInstagramLink" class="profile-link" href="https://instagram.com/hareesh_parekkad" target="_blank" rel="noopener noreferrer"><span class="link-icon insta-icon">📸</span><span id="profileInstagram">@hareesh_parekkad</span></a>
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="profileImg" src="hareesh.jpg" alt="Profile photo" onerror="this.style.display='none'">
+    <h2 id="profileName">Hareesh</h2>
+    <h3 id="profileRole">Secretary</h3>
+    <div class="profile-links">
+      <a id="profilePhoneLink" class="profile-link" href="tel:+917994353702"><span class="link-icon phone-icon">📞</span><span id="profilePhone">+91 7994353702</span></a>
+      <a id="profileInstagramLink" class="profile-link" href="#" onclick="openInstagram(event,'hareeshkyd')"><span class="link-icon insta-icon">📸</span><span id="profileInstagram">@hareeshkyd</span></a>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
 <script>
 const modal=document.getElementById('profileModal');
 const profileImg=document.getElementById('profileImg');
 const titleText='Captains Parekkad';
 const titleContainer=document.getElementById('animatedTitle');
-
-titleText.split('').forEach((char,index)=>{
-const span=document.createElement('span');
-span.className='letter' + (char===' ' ? ' space' : '');
-span.style.setProperty('--i', index);
-span.innerHTML=char===' ' ? '&nbsp;' : char;
-titleContainer.appendChild(span);
-});
-
-function cleanPhone(phone){
-return phone.replace(/[^\d+]/g,'');
-}
-
-function openProfile(name,role,img,phone,instagram){
-document.getElementById('profileName').textContent=name;
-document.getElementById('profileRole').textContent=role;
-document.getElementById('profilePhone').textContent=phone;
-document.getElementById('profileInstagram').textContent='@' + instagram;
-document.getElementById('profilePhoneLink').href='tel:' + cleanPhone(phone);
-document.getElementById('profileInstagramLink').href='https://instagram.com/' + instagram;
-profileImg.style.display='block';
-profileImg.src=img;
-profileImg.alt=name + ' photo';
-modal.classList.remove('closing');
-modal.style.display='flex';
-requestAnimationFrame(()=>{modal.classList.add('show');});
-modal.setAttribute('aria-hidden','false');
-}
-
-function closeModal(){
-modal.classList.remove('show');
-modal.classList.add('closing');
-modal.setAttribute('aria-hidden','true');
-setTimeout(()=>{
-modal.classList.remove('closing');
-modal.style.display='';
-},420);
-}
-
-function handleKey(event,name,role,img,phone,instagram){
-if(event.key==='Enter' || event.key===' '){
-event.preventDefault();
-openProfile(name,role,img,phone,instagram);
-}
-}
-
+titleText.split('').forEach((char,index)=>{const span=document.createElement('span');span.className='letter'+(char===' ' ? ' space' : '');span.style.setProperty('--i',index);span.innerHTML=char===' ' ? '&nbsp;' : char;titleContainer.appendChild(span);});
+function cleanPhone(phone){return phone.replace(/[^\d+]/g,'');}
+function openProfile(name,role,img,phone,instagram){document.getElementById('profileName').textContent=name;document.getElementById('profileRole').textContent=role;document.getElementById('profilePhone').textContent=phone;document.getElementById('profileInstagram').textContent='@'+instagram;document.getElementById('profilePhoneLink').href='tel:'+cleanPhone(phone);document.getElementById('profileInstagramLink').setAttribute('data-insta',instagram);profileImg.style.display='block';profileImg.src=img;profileImg.alt=name+' photo';modal.classList.remove('closing');modal.style.display='flex';requestAnimationFrame(()=>modal.classList.add('show'));modal.setAttribute('aria-hidden','false');}
+function openInstagram(e, username){e.preventDefault();const appUrl='instagram://user?username='+encodeURIComponent(username);const webUrl='https://instagram.com/'+encodeURIComponent(username);const iframe=document.createElement('iframe');iframe.style.display='none';iframe.src=appUrl;document.body.appendChild(iframe);const start=Date.now();setTimeout(function(){try{document.body.removeChild(iframe)}catch(err){}if(Date.now()-start<2000){window.location.href=webUrl;}},1200);setTimeout(function(){try{window.location=appUrl}catch(err){}},50);}
+function closeModal(){modal.classList.remove('show');modal.classList.add('closing');modal.setAttribute('aria-hidden','true');setTimeout(()=>{modal.classList.remove('closing');modal.style.display='';},420);}
+function handleKey(event,name,role,img,phone,instagram){if(event.key==='Enter'||event.key===' '){event.preventDefault();openProfile(name,role,img,phone,instagram);}}
 window.onclick=function(e){if(e.target===modal)closeModal();}
-window.addEventListener('keydown',function(e){if(e.key==='Escape' && modal.classList.contains('show'))closeModal();});
+window.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))closeModal();});
 </script>
 </body>
 </html>
