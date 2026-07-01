@@ -76,7 +76,7 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
     <img id="introLion" class="intro-lion" src="lion-intro.png" alt="Lion intro" onerror="this.style.display='none'">
     <div class="intro-title">WELCOME</div>
     <div class="intro-subtitle">TO OUR WEBSITE</div>
-    <audio id="introRoar" src="intro-roar.mp3" preload="auto" playsinline webkit-playsinline></audio>
+    <audio id="introRoar" src="intro-roar.mp3" preload="auto" playsinline webkit-playsinline muted></audio>
   </div>
 </div>
 <div class="bottom-fire"></div>
@@ -119,8 +119,7 @@ function handleKey(event){if(event.key==='Enter'||event.key===' '){event.prevent
 document.querySelectorAll('.member-card').forEach(card=>{card.addEventListener('click',()=>openProfileFromCard(card));card.addEventListener('keypress',handleKey);});
 window.onclick=function(e){if(e.target===modal)closeModal();}
 window.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))closeModal();});
-let audioUnlocked=false;function tryPlayRoar(){if(!roar)return;roar.currentTime=0;const r=roar.play();if(r&&r.catch)r.catch(()=>{});}function unlockAudio(){if(audioUnlocked)return;audioUnlocked=true;tryPlayRoar();setTimeout(()=>{try{roar.pause();roar.currentTime=0;}catch(e){}},120);}['pointerdown','touchstart','click','keydown'].forEach(ev=>document.addEventListener(ev,unlockAudio,{once:true,passive:true}));
-window.addEventListener('load',()=>{setTimeout(()=>{intro.classList.add('open');tryPlayRoar();},200);setTimeout(()=>intro.classList.add('hide'),3200);setTimeout(()=>intro.remove(),4200);});
+let audioReady=false;function startRoar(){if(!roar)return;roar.muted=false;roar.volume=1;roar.currentTime=0;const p=roar.play();if(p&&p.catch)p.catch(()=>{});}function initAudio(){if(audioReady)return;audioReady=true;roar.load();roar.muted=true;roar.play().then(()=>{roar.pause();roar.currentTime=0;roar.muted=false;}).catch(()=>{});}function unlockAudio(){initAudio();startRoar();}['pointerdown','touchstart','click','keydown'].forEach(ev=>document.addEventListener(ev,unlockAudio,{once:true}));window.addEventListener('load',()=>{setTimeout(()=>{intro.classList.add('open');startRoar();},200);setTimeout(()=>intro.classList.add('hide'),3200);setTimeout(()=>intro.remove(),4200);});
 </script>
 </body>
 </html>
