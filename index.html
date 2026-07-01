@@ -54,137 +54,25 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
 .intro-door{position:absolute;top:50%;width:50vw;height:100vh;transform:translateY(-50%);transition:transform 1.8s cubic-bezier(.2,.8,.2,1);overflow:hidden}
 .intro-door.left{left:0;border-right:1px solid rgba(255,220,160,.16)}
 .intro-door.right{right:0;border-left:1px solid rgba(255,220,160,.16)}
-.door-frame{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(135deg, rgba(51,28,12,.98), rgba(111,67,29,.98) 22%, rgba(74,39,17,.98) 48%, rgba(133,83,37,.98) 72%, rgba(64,34,14,.98)),
-    radial-gradient(circle at 50% 50%, rgba(255,235,190,.08), transparent 58%);
-  box-shadow:inset 0 0 70px rgba(0,0,0,.45), inset 0 0 0 10px rgba(92,52,23,.7);
-}
-.door-frame:before,.door-frame:after{
-  content:'';
-  position:absolute;top:0;bottom:0;width:58px;
-  background:
-    linear-gradient(180deg, rgba(255,235,195,.08), rgba(0,0,0,.1)),
-    repeating-linear-gradient(180deg, rgba(255,225,180,.14) 0 3px, rgba(92,52,23,.1) 3px 10px, rgba(255,225,180,.06) 10px 14px);
-  box-shadow:inset 0 0 0 1px rgba(255,235,200,.2), inset 0 0 18px rgba(0,0,0,.22);
-}
+.door-frame{position:absolute;inset:0;background:linear-gradient(135deg, rgba(51,28,12,.98), rgba(111,67,29,.98) 22%, rgba(74,39,17,.98) 48%, rgba(133,83,37,.98) 72%, rgba(64,34,14,.98)),radial-gradient(circle at 50% 50%, rgba(255,235,190,.08), transparent 58%);box-shadow:inset 0 0 70px rgba(0,0,0,.45), inset 0 0 0 10px rgba(92,52,23,.7)}
+.door-frame:before,.door-frame:after{content:'';position:absolute;top:0;bottom:0;width:58px;background:linear-gradient(180deg, rgba(255,235,195,.08), rgba(0,0,0,.1)),repeating-linear-gradient(180deg, rgba(255,225,180,.14) 0 3px, rgba(92,52,23,.1) 3px 10px, rgba(255,225,180,.06) 10px 14px);box-shadow:inset 0 0 0 1px rgba(255,235,200,.2), inset 0 0 18px rgba(0,0,0,.22)}
 .door-frame:before{left:18px}
 .door-frame:after{right:18px}
-.door-pillar{
-  position:absolute;top:10px;bottom:10px;width:72px;
-  background:
-    linear-gradient(180deg, rgba(84,46,19,.98), rgba(159,98,43,.98) 18%, rgba(110,62,26,.98) 50%, rgba(172,108,52,.98) 78%, rgba(72,40,16,.98));
-  border-radius:18px;
-  box-shadow:inset 0 0 20px rgba(255,230,180,.12), 0 0 0 2px rgba(73,40,18,.85);
-}
+.door-pillar{position:absolute;top:10px;bottom:10px;width:72px;background:linear-gradient(180deg, rgba(84,46,19,.98), rgba(159,98,43,.98) 18%, rgba(110,62,26,.98) 50%, rgba(172,108,52,.98) 78%, rgba(72,40,16,.98));border-radius:18px;box-shadow:inset 0 0 20px rgba(255,230,180,.12), 0 0 0 2px rgba(73,40,18,.85)}
 .door-pillar.left{left:0}
 .door-pillar.right{right:0}
-.door-pillar:before{
-  content:'';
-  position:absolute;inset:10px 14px;
-  background:
-    radial-gradient(circle at 50% 10%, rgba(255,230,180,.45), transparent 14%),
-    radial-gradient(circle at 50% 50%, rgba(111,60,24,.0), rgba(111,60,24,.0) 32%, rgba(255,220,160,.18) 33%, rgba(255,220,160,.06) 38%, transparent 40%),
-    repeating-linear-gradient(180deg, rgba(255,225,190,.12) 0 5px, rgba(88,48,19,.14) 5px 12px, rgba(255,225,190,.06) 12px 16px);
-  border-radius:14px;
-  box-shadow:inset 0 0 0 2px rgba(255,220,160,.12);
-}
-.door-pillar:after{
-  content:'';
-  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
-  width:44px;height:98px;border-radius:22px 22px 10px 10px;
-  background:
-    radial-gradient(circle at 50% 28%, rgba(255,235,195,.35), transparent 18%),
-    linear-gradient(180deg, rgba(169,106,51,.98), rgba(102,56,24,.98) 60%, rgba(69,37,16,.98));
-  box-shadow:inset 0 0 10px rgba(255,230,180,.08), 0 0 0 1px rgba(255,235,200,.15);
-}
+.door-pillar:before{content:'';position:absolute;inset:10px 14px;background:radial-gradient(circle at 50% 10%, rgba(255,230,180,.45), transparent 14%),radial-gradient(circle at 50% 50%, rgba(111,60,24,.0), rgba(111,60,24,.0) 32%, rgba(255,220,160,.18) 33%, rgba(255,220,160,.06) 38%, transparent 40%),repeating-linear-gradient(180deg, rgba(255,225,190,.12) 0 5px, rgba(88,48,19,.14) 5px 12px, rgba(255,225,190,.06) 12px 16px);border-radius:14px;box-shadow:inset 0 0 0 2px rgba(255,220,160,.12)}
+.door-pillar:after{content:'';position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:44px;height:98px;border-radius:22px 22px 10px 10px;background:radial-gradient(circle at 50% 28%, rgba(255,235,195,.35), transparent 18%),linear-gradient(180deg, rgba(169,106,51,.98), rgba(102,56,24,.98) 60%, rgba(69,37,16,.98));box-shadow:inset 0 0 10px rgba(255,230,180,.08), 0 0 0 1px rgba(255,235,200,.15)}
 .left .door-pillar:after,.right .door-pillar:after{bottom:34px}
-.door-panel{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:72%;height:84%;
-  border-radius:14px;
-  background:
-    linear-gradient(135deg, rgba(214,143,72,.98), rgba(168,102,46,.98) 26%, rgba(117,67,29,.98) 52%, rgba(191,122,58,.98) 78%, rgba(135,80,32,.98));
-  border:4px solid rgba(92,52,23,.75);
-  box-shadow:inset 0 0 30px rgba(255,235,190,.12), inset 0 0 0 2px rgba(255,220,170,.15);
-}
-.door-panel:before{
-  content:'';
-  position:absolute;inset:18px;
-  border-radius:10px;
-  background:
-    radial-gradient(circle at 50% 16%, rgba(255,240,200,.28), transparent 10%),
-    radial-gradient(circle at 50% 50%, rgba(255,240,200,.08), transparent 40%),
-    linear-gradient(135deg, rgba(255,230,180,.06), transparent 35%, rgba(70,34,14,.28) 50%, transparent 65%, rgba(255,230,180,.05)),
-    repeating-linear-gradient(90deg, rgba(255,240,210,.08) 0 2px, transparent 2px 24px);
-  box-shadow:inset 0 0 0 1px rgba(255,235,200,.16);
-}
-.door-panel:after{
-  content:'';
-  position:absolute;inset:26px;
-  border-radius:8px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,235,190,.03), transparent 48%),
-    repeating-linear-gradient(0deg, transparent 0 14px, rgba(88,48,19,.16) 14px 15px, transparent 15px 30px);
-  opacity:.7;
-}
-.door-carving{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:44%;height:72%;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(255,245,220,.22), transparent 9%),
-    radial-gradient(circle at 50% 28%, rgba(100,55,22,.0), rgba(100,55,22,.0) 34%, rgba(255,230,180,.18) 35%, rgba(255,230,180,.05) 41%, transparent 42%),
-    radial-gradient(circle at 50% 48%, rgba(255,240,210,.18), transparent 10%),
-    radial-gradient(circle at 50% 62%, rgba(255,235,190,.15), transparent 14%),
-    linear-gradient(135deg, rgba(255,220,160,.12), rgba(82,42,17,.12)),
-    repeating-linear-gradient(45deg, rgba(255,235,190,.08) 0 2px, transparent 2px 11px);
-  clip-path: path('M 50 0 C 62 8, 72 20, 82 35 C 96 57, 100 87, 94 118 C 88 150, 73 174, 49 199 C 28 174, 13 149, 6 117 C 0 88, 4 58, 18 36 C 28 20, 38 8, 50 0 Z');
-  filter:drop-shadow(0 0 6px rgba(0,0,0,.2));
-  opacity:.95;
-}
-.door-carving:before{
-  content:'';
-  position:absolute;inset:0;
-  background:
-    radial-gradient(circle at 50% 16%, rgba(255,235,200,.6) 0 3px, transparent 4px),
-    radial-gradient(circle at 50% 18%, transparent 0 14px, rgba(255,230,180,.2) 15px 17px, transparent 18px),
-    linear-gradient(180deg, transparent 0 18%, rgba(255,220,170,.12) 18% 20%, transparent 20% 100%);
-  clip-path: inherit;
-}
-.door-carving:after{
-  content:'';
-  position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
-  width:84%;height:84%;
-  background:
-    radial-gradient(circle at 50% 14%, rgba(255,235,200,.55), transparent 8%),
-    radial-gradient(circle at 50% 28%, rgba(255,235,200,.18), transparent 16%),
-    radial-gradient(circle at 50% 50%, rgba(255,235,200,.1), transparent 18%),
-    linear-gradient(135deg, transparent 0 48%, rgba(255,235,200,.2) 48% 50%, transparent 50% 100%);
-  clip-path: path('M 50 0 C 56 6, 63 15, 68 25 C 76 42, 78 66, 73 88 C 68 110, 57 128, 49 145 C 39 128, 28 110, 22 88 C 16 66, 18 42, 26 25 C 31 15, 38 6, 50 0 Z');
-  opacity:.7;
-}
-.door-rope{
-  position:absolute;left:50%;top:6px;transform:translateX(-50%);
-  width:54px;height:54px;border-radius:50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255,235,190,.3) 0 5px, rgba(126,74,35,.95) 6px 10px, rgba(255,235,190,.12) 11px 13px, transparent 14px),
-    conic-gradient(from 0deg, rgba(255,220,160,.2), rgba(114,68,28,.85), rgba(255,220,160,.2), rgba(114,68,28,.85));
-  box-shadow:0 0 0 2px rgba(86,47,20,.9), inset 0 0 10px rgba(0,0,0,.15);
-}
-.door-handle{
-  position:absolute;left:18%;top:50%;transform:translateY(-50%);
-  width:16px;height:54px;border-radius:10px;
-  background:linear-gradient(180deg, #efe8cc, #b9a96f 45%, #7d6a38 100%);
-  box-shadow:0 0 0 1px rgba(255,255,255,.3), inset 0 0 8px rgba(255,255,255,.2);
-}
-.door-handle:before{
-  content:'';
-  position:absolute;left:-5px;top:8px;width:26px;height:12px;border-radius:12px;
-  background:linear-gradient(180deg, #f4efd9, #c9ba82 75%, #9a8648);
-  transform:rotate(-12deg);
-  box-shadow:0 0 0 1px rgba(255,255,255,.15);
-}
+.door-panel{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72%;height:84%;border-radius:14px;background:linear-gradient(135deg, rgba(214,143,72,.98), rgba(168,102,46,.98) 26%, rgba(117,67,29,.98) 52%, rgba(191,122,58,.98) 78%, rgba(135,80,32,.98));border:4px solid rgba(92,52,23,.75);box-shadow:inset 0 0 30px rgba(255,235,190,.12), inset 0 0 0 2px rgba(255,220,170,.15)}
+.door-panel:before{content:'';position:absolute;inset:18px;border-radius:10px;background:radial-gradient(circle at 50% 16%, rgba(255,240,200,.28), transparent 10%),radial-gradient(circle at 50% 50%, rgba(255,240,200,.08), transparent 40%),linear-gradient(135deg, rgba(255,230,180,.06), transparent 35%, rgba(70,34,14,.28) 50%, transparent 65%, rgba(255,230,180,.05)),repeating-linear-gradient(90deg, rgba(255,240,210,.08) 0 2px, transparent 2px 24px);box-shadow:inset 0 0 0 1px rgba(255,235,200,.16)}
+.door-panel:after{content:'';position:absolute;inset:26px;border-radius:8px;background:radial-gradient(circle at 50% 50%, rgba(255,235,190,.03), transparent 48%),repeating-linear-gradient(0deg, transparent 0 14px, rgba(88,48,19,.16) 14px 15px, transparent 15px 30px);opacity:.7}
+.door-carving{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44%;height:72%;background:radial-gradient(circle at 50% 18%, rgba(255,245,220,.22), transparent 9%),radial-gradient(circle at 50% 28%, rgba(100,55,22,.0), rgba(100,55,22,.0) 34%, rgba(255,230,180,.18) 35%, rgba(255,230,180,.05) 41%, transparent 42%),radial-gradient(circle at 50% 48%, rgba(255,240,210,.18), transparent 10%),radial-gradient(circle at 50% 62%, rgba(255,235,190,.15), transparent 14%),linear-gradient(135deg, rgba(255,220,160,.12), rgba(82,42,17,.12)),repeating-linear-gradient(45deg, rgba(255,235,190,.08) 0 2px, transparent 2px 11px);clip-path:path('M 50 0 C 62 8, 72 20, 82 35 C 96 57, 100 87, 94 118 C 88 150, 73 174, 49 199 C 28 174, 13 149, 6 117 C 0 88, 4 58, 18 36 C 28 20, 38 8, 50 0 Z');filter:drop-shadow(0 0 6px rgba(0,0,0,.2));opacity:.95}
+.door-carving:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 16%, rgba(255,235,200,.6) 0 3px, transparent 4px),radial-gradient(circle at 50% 18%, transparent 0 14px, rgba(255,230,180,.2) 15px 17px, transparent 18px),linear-gradient(180deg, transparent 0 18%, rgba(255,220,170,.12) 18% 20%, transparent 20% 100%);clip-path:inherit}
+.door-carving:after{content:'';position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:84%;height:84%;background:radial-gradient(circle at 50% 14%, rgba(255,235,200,.55), transparent 8%),radial-gradient(circle at 50% 28%, rgba(255,235,200,.18), transparent 16%),radial-gradient(circle at 50% 50%, rgba(255,235,200,.1), transparent 18%),linear-gradient(135deg, transparent 0 48%, rgba(255,235,200,.2) 48% 50%, transparent 50% 100%);clip-path:path('M 50 0 C 56 6, 63 15, 68 25 C 76 42, 78 66, 73 88 C 68 110, 57 128, 49 145 C 39 128, 28 110, 22 88 C 16 66, 18 42, 26 25 C 31 15, 38 6, 50 0 Z');opacity:.7}
+.door-rope{position:absolute;left:50%;top:6px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 50% 50%, rgba(255,235,190,.3) 0 5px, rgba(126,74,35,.95) 6px 10px, rgba(255,235,190,.12) 11px 13px, transparent 14px),conic-gradient(from 0deg, rgba(255,220,160,.2), rgba(114,68,28,.85), rgba(255,220,160,.2), rgba(114,68,28,.85));box-shadow:0 0 0 2px rgba(86,47,20,.9), inset 0 0 10px rgba(0,0,0,.15)}
+.door-handle{position:absolute;left:18%;top:50%;transform:translateY(-50%);width:16px;height:54px;border-radius:10px;background:linear-gradient(180deg, #efe8cc, #b9a96f 45%, #7d6a38 100%);box-shadow:0 0 0 1px rgba(255,255,255,.3), inset 0 0 8px rgba(255,255,255,.2)}
+.door-handle:before{content:'';position:absolute;left:-5px;top:8px;width:26px;height:12px;border-radius:12px;background:linear-gradient(180deg, #f4efd9, #c9ba82 75%, #9a8648);transform:rotate(-12deg);box-shadow:0 0 0 1px rgba(255,255,255,.15)}
 .intro-screen.open .intro-door.left{transform:translate(-105%, -50%)}
 .intro-screen.open .intro-door.right{transform:translate(105%, -50%)}
 .intro-lion{width:min(78vw,720px);height:auto;display:block;margin:0 auto 18px;animation:lionRoar 1.5s ease-in-out infinite alternate;filter:drop-shadow(0 0 26px rgba(255,140,0,.55))}
@@ -223,7 +111,7 @@ h2{font-family:Cinzel,serif;font-size:clamp(1.4rem,3vw,2rem);margin:34px 0 18px;
     <img id="introLion" class="intro-lion" src="lion-intro.png" alt="Lion intro" onerror="this.style.display='none'">
     <div class="intro-title">WELCOME</div>
     <div class="intro-subtitle">TO OUR WEBSITE</div>
-    <audio id="introRoar" src="intro-roar.mp3" preload="auto" playsinline webkit-playsinline muted></audio>
+    <audio id="introRoar" src="intro-roar.mp3" preload="auto" autoplay playsinline webkit-playsinline></audio>
   </div>
 </div>
 <div class="bottom-fire"></div>
@@ -266,10 +154,8 @@ function handleKey(event){if(event.key==='Enter'||event.key===' '){event.prevent
 document.querySelectorAll('.member-card').forEach(card=>{card.addEventListener('click',()=>openProfileFromCard(card));card.addEventListener('keypress',handleKey);});
 window.onclick=function(e){if(e.target===modal)closeModal();}
 window.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))closeModal();});
-let audioPrimed=false;
-function playIntroOnce(){if(!roar||audioPrimed)return;audioPrimed=true;roar.muted=false;roar.volume=1;roar.currentTime=0;const p=roar.play();if(p&&p.catch)p.catch(()=>{});}
-function primeAudio(){if(!roar)return;roar.load();roar.muted=true;roar.play().then(()=>{roar.pause();roar.currentTime=0;roar.muted=false;}).catch(()=>{});}
-['pointerdown','touchstart','click','keydown'].forEach(ev=>document.addEventListener(ev,primeAudio,{once:true}));
+let roarPlayed=false;
+function playIntroOnce(){if(!roar||roarPlayed)return;roarPlayed=true;roar.muted=false;roar.volume=1;roar.currentTime=0;const p=roar.play();if(p&&p.catch)p.catch(()=>{});}
 window.addEventListener('load',()=>{setTimeout(()=>{intro.classList.add('open');playIntroOnce();},200);setTimeout(()=>intro.classList.add('hide'),3200);setTimeout(()=>intro.remove(),4200);});
 </script>
 </body>
